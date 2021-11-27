@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="loginPage.css">
+
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div id="login_main_div">
+<form action="/login" method = "POST">
+		<div><input placeholder="Username" type="text" name="userName" required></div>
+		<div><input placeholder="Password" type="password" name="pass" required></div>
+		<input type="submit">
+		
+</form>
+<form action="/createAccount" method = "POST">
+		<input type="submit" value="Create">
+</form>
+</div>
+</body>
+</html>
