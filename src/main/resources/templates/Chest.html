@@ -15,25 +15,25 @@
 </div>
  -->
 
-<div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-<div class="card-header text-center">Bench</div>
+<div class="card text-white bg-dark mb-3" style="max-width: 18rem;"  th:each="chestWorkout: ${chestWorkouts}">
+<div class="card-header text-center" th:text="${chestWorkout.name}"></div>
 	<div class="row">
 		<div class="col text-center">Max</div>
-		<div class="col text-center">90%</div>
-		<div class="col text-center">80%</div>
 	</div>
 	
-	<div class="row" th:each="chestWorkout: ${chestWorkouts}">
+	<div class="row">
 		<div class="col text-center" th:text="${chestWorkout.max}"></div>
-		<div class="col text-center" th:text="${chestWorkout.ninty}"></div>
-		<div class="col text-center" th:text="${chestWorkout.eighty}"></div>
+
 	</div>
+	
 </div>
 
-<div class="card" style="max-width: 18rem;">
+<div class="card" style="max-width: 18rem; min-height: 6rem;">
 
-<form action = "/addChestWorkout">
-	<div class="text-center"><button >+</button></div>
+<form action = "/addWorkout">
+	<input type="text" name="name">
+	<input type="text" name="max">
+	<input type="submit" value= "+" style="min-width: 18rem; min-height: 6rem; font-size: 300%;">
 	
 </form>
 
