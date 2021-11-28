@@ -2,6 +2,9 @@ package com.sobieraj.gym.GymController;
 
 
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,9 +34,10 @@ public class GymHomePage {
 	}
 	
 	@RequestMapping("/login")
-	public String HomePage(Account account) {
-		
+	public String HomePage(Account account, HttpServletRequest req) {
+		HttpSession session = req.getSession();
 		if(accountService.passwordCorrect(account.getPass(), account.getUserName())) {
+			session.setAttribute("user", account.getUserName());
 			return "homePage";
 		}
 		else {
